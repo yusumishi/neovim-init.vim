@@ -233,3 +233,20 @@ nmap <silent> <leader><leader> :noh<CR>
 nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 
+""" My Addition
+set mouse=a
+let g:ale_fixers = { 'python': ['autopep8','yapf'] }
+let g:ale_linters = {
+\   'python': ['flake8',],
+\}
+let g:ale_python_pylint_options = '--load-plugins pylint_django'
+let g:ale_javascript_eslint_options = '--ext .js,.vue src'
+
+imap jj <Esc>
+nnoremap <leader>c :BD<CR>
+nnoremap <leader>n :BD!<CR>
+
+
+function! StartifyEntryFormat()
+    return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
+endfunction
