@@ -48,7 +48,17 @@ Plug 'honza/vim-snippets'
 Plug 'metakirby5/codi.vim'
 
 " Entertainment
-Plug 'ryanss/vim-hackernews'
+"Plug 'ryanss/vim-hackernews'
+
+" User Added
+Plug 'posva/vim-vue'
+Plug 'airblade/vim-gitgutter'
+Plug 'w0rp/ale'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'qpkorr/vim-bufkill'
+Plug 'mattn/emmet-vim'
+Plug 'mhinz/vim-startify'
+Plug 'drewtempelmeyer/palenight.vim'
 
 call plug#end()
 
@@ -76,7 +86,7 @@ set tabstop=4 softtabstop=4 shiftwidth=4 expandtab smarttab autoindent
 set incsearch ignorecase smartcase hlsearch
 set ruler laststatus=2 showcmd showmode
 set list listchars=trail:»,tab:»-
-set fillchars+=vert:\ 
+set fillchars+=vert:\
 set wrap breakindent
 set encoding=utf-8
 set number
@@ -208,7 +218,7 @@ nmap <leader>q :NERDTreeToggle<CR>
 nmap \ <leader>q
 nmap <leader>w :TagbarToggle<CR>
 nmap <leader>ee :Colors<CR>
-nmap <leader>ea :AirlineTheme 
+nmap <leader>ea :AirlineTheme
 nmap <leader>e1 :call ColorDracula()<CR>
 nmap <leader>e2 :call ColorSeoul256()<CR>
 nmap <leader>e3 :call ColorForgotten()<CR>
