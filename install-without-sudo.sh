@@ -8,7 +8,7 @@ mkdir -p ~/.config/nvim
 
 # Install virtualenv to containerize dependencies
 echo '[*] Pip installing virtualenv to containerize Neovim dependencies (instead of installing them onto your system) ...'
-python3 -m pip install virtualenv
+python3 -m pip install  --user virtualenv
 python3 -m virtualenv -p python3 ~/.config/nvim/env
 
 # Install pip modules for Neovim within the virtual environment created
