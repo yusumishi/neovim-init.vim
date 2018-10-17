@@ -59,6 +59,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-startify'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -67,18 +68,20 @@ let g:python3_host_prog = expand('~/.config/nvim/env/bin/python')
 
 """ Coloring
 syntax on
-color dracula
+"color dracula
+colorscheme onedark
 highlight Pmenu guibg=white guifg=black gui=bold
 highlight Comment gui=bold
 highlight Normal gui=none
 highlight NonText guibg=none
 
 " Opaque Background (Comment out to use terminal's profile)
-set termguicolors
+"set termguicolors
 
 " Transparent Background (For i3 and compton)
-"highlight Normal guibg=NONE ctermbg=NONE
-"highlight LineNr guibg=NONE ctermbg=NONE
+highlight Normal guibg=NONE ctermbg=NONE
+highlight LineNr guibg=NONE ctermbg=NONE
+highlight NonText guibg=NONE ctermbg=NONE
 
 """ Other Configurations
 filetype plugin indent on
@@ -245,7 +248,12 @@ nmap <S-Tab> :bprevious<CR>
 
 """ My Addition
 set mouse=a
-let g:ale_fixers = { 'python': ['autopep8','yapf'] }
+let g:ale_fixers = {
+\          'python': ['autopep8','yapf'],
+\          'javascript': ['eslint', 'prettier'],
+\          'css': ['prettier'],
+\          'vue': ['prettier'],
+\} 
 let g:ale_linters = {
 \   'python': ['flake8',],
 \}
@@ -260,3 +268,5 @@ nnoremap <leader>n :BD!<CR>
 function! StartifyEntryFormat()
     return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
 endfunction
+
+autocmd FileType vue syntax sync fromstart
